@@ -4,6 +4,7 @@
 typedef struct ListNode ListNode;
 typedef struct DoubleLinkList DoubleLinkList;
 
+#include "personnalDefine.h"
 
 #define ElementType int 
 
