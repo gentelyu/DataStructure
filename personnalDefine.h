@@ -1,7 +1,8 @@
 #ifndef __PERSONNALDEFINE_H_
 #define __PERSONNALDEFINE_H_
 
-
+#define true                1
+#define false               0
 
 /* 8XXX 函数中判断出错的返回值 */
 #define NULL_POINT          8000        //空指针
