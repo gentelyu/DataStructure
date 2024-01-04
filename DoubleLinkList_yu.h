@@ -29,7 +29,7 @@ int doubleLinkListDelByTail(DoubleLinkList *dlList);
 int doubleLinkListDelByIndex(DoubleLinkList *dlList, int index);
 
 /* 按值删 */
-
+int DoubleLinkListDelByElement(DoubleLinkList *dlList, ElementType element);
 
 /* 按位改值 */
 

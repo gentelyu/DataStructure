@@ -223,3 +223,49 @@ int doubleLinkListDelByIndex(DoubleLinkList *dlList, int index)
 }
 
 
+int DoubleLinkListDelByElement(DoubleLinkList *dlList, ElementType element)
+{
+    int ret = 0;
+    
+    if(!dlList)
+    {
+        return NULL_POINT;
+    }
+
+    while(dlList->head->next->data == element)
+    {
+        doubleLinkListDelByIndex(dlList, 0);
+        continue;;
+    }
+    while(dlList->tail->data == element)
+    {
+        doubleLinkListDelByIndex(dlList, (dlList->size) - 1);
+        continue;
+    }
+
+    ListNode *travelPoint = dlList->head;
+    ListNode *delPoint = NULL;
+    int flag = 0;
+
+    while(travelPoint->next != NULL)
+    {
+        flag = 0;
+        if(travelPoint->next->data == element)
+        {
+            delPoint = travelPoint->next;
+            travelPoint->next = travelPoint->next->next;
+            travelPoint->next->prev = travelPoint;
+
+            free(delPoint);
+            dlList->size--;
+            flag = 1;
+        }
+        if(flag == 0)
+        {
+            travelPoint = travelPoint->next;
+        }
+        
+    }
+
+    return 0;
+}
